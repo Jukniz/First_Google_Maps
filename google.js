@@ -15,6 +15,7 @@ var LatJap = new google.maps.LatLng(35.53222622770337, 137.4609375);
 var LatEsp = new google.maps.LatLng(39.232253141714885,-4.04296875);
 var LatChi = new google.maps.LatLng(33.7243396617476,101.77734375);
 var LatUsa = new google.maps.LatLng(38.41055825094609,-101.07421875);
+var LatEgi = new google.maps.LatLng(24.846565348219734,29.53125);
 
 var markerJapon = new google.maps.Marker({
       position: LatJap,
@@ -39,6 +40,13 @@ var markerJapon = new google.maps.Marker({
       map: map,
       title:"Estados Unidos"
   });
+  
+     var markerEgi= new google.maps.Marker({
+      position: LatEgi,
+      map: map,
+      title:"Egipto"
+  });
+  
   
   var Japon = '<div id="content">'+
     '<div id="siteNotice">'+
@@ -104,6 +112,21 @@ var Usa = '<div id="content">'+
 '</div>'+
 '</div>';
 
+
+var Egipto = '<div id="content">'+
+    '<div id="siteNotice">'+
+    '</div>'+
+    '<h2 id="firstHeading" class="firstHeading">Egipto</h2>'+
+    '<div id="bodyContent">'+
+    'La República Árabe de Egipto, es un país de Oriente Próximo, situado en el extremo noreste de África, que incluye la península del Sinaí (que pertenece al continente asiático). La mayor parte de su superficie la integra el desierto del Sahara, sólo habitado en torno a los oasis. Su capital es El Cairo.'+
+'Es uno de los países con más población de África y Oriente Medio, cuya mayor parte se asienta en las riberas del río Nilo y en el delta donde están las zonas de tierra fértil. Casi la mitad de los egipcios viven en áreas urbanas, sobre todo en los centros densamente poblados de El Cairo y Alejandría.'+
+'Egipto es famoso por su civilización antigua y sus monumentos, como las pirámides y la gran esfinge; la ciudad meridional de Luxor contiene un gran número de restos antiguos, tales como el templo de Karnak y el Valle de los Reyes. Hoy Egipto es un centro político y cultural importante del Oriente Próximo.'+
+'<p><center><img src="img/egipto.jpg" width="280" height="180"></center></p>'+
+'<p>Para más información: <a href="http://es.wikipedia.org/wiki/Egipto">http://es.wikipedia.org/wiki/Egipto</a></p>'+
+'</div>'+
+'</div>';
+
+
 var infowindowJapon = new google.maps.InfoWindow({
     content: Japon
 });
@@ -117,6 +140,9 @@ var infowindowChina= new google.maps.InfoWindow({
 });
 var infowindowUsa= new google.maps.InfoWindow({
     content: Usa
+});
+var infowindowEgipto= new google.maps.InfoWindow({
+    content: Egipto
 });
 
 google.maps.event.addListener(markerJapon, 'click', function() {
@@ -135,7 +161,10 @@ google.maps.event.addListener(markerChina, 'click', function() {
 google.maps.event.addListener(markerUsa, 'click', function() {
   infowindowUsa.open(map,markerUsa);
 });
+  google.maps.event.addListener(markerEgi, 'click', function() {
+  infowindowEgipto.open(map,markerEgi);
+});
       }
-      
+     
    
 
